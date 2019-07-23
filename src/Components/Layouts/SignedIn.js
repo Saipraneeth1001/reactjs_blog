@@ -2,15 +2,18 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signOut } from '../../Components/Store/actions/authActions'
-
+import MenuItem from '@material-ui/core/MenuItem';
 const SignedIn = (props) => {
     
     return (
-        <ul className="right">
-            <li><NavLink to="/create">Create Project</NavLink></li>
-            <li><a onClick={props.signOut}>Logout</a></li>
-            <li><NavLink to="/" className="btn btn-floating pink lighten-1">{props.profile.initials}</NavLink></li>
-        </ul>
+    <div>
+        <MenuItem><NavLink to ="/create">Create Project</NavLink></MenuItem>
+        <MenuItem><a onClick = {props.signOut}>Logout</a></MenuItem>
+        <MenuItem><NavLink to ="/about">About Us</NavLink></MenuItem>
+        <MenuItem><NavLink to ="/">Home</NavLink></MenuItem>
+    </div>
+   
+        
     )
 }
 const mapDispatchToProps = (dispatch) =>{
